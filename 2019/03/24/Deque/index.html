@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Leetcode,Java,Algorithm,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Need for other&apos;s acceptable makes you invisible.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Playful Heart">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see order">
+<meta name="keywords" content="Leetcode,Java,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree &#x2F; 使用双向队列解决二叉树右视图问题">
+<meta property="og:url" content="http://yoursite.com/2019/03/24/Deque/index.html">
 <meta property="og:site_name" content="Playful Heart">
-<meta property="og:description" content="Need for other&apos;s acceptable makes you invisible.">
+<meta property="og:description" content="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see order">
 <meta property="og:locale" content="Chinese">
+<meta property="og:updated_time" content="2019-03-24T07:07:25.725Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Playful Heart">
-<meta name="twitter:description" content="Need for other&apos;s acceptable makes you invisible.">
+<meta name="twitter:title" content="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree &#x2F; 使用双向队列解决二叉树右视图问题">
+<meta name="twitter:description" content="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see order">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/24/Deque/">
 
 
 
 
 
-  <title>Playful Heart</title>
+  <title>Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree / 使用双向队列解决二叉树右视图问题 | Playful Heart</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/24/Deque/" itemprop="url">Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree / 使用双向队列解决二叉树右视图问题</a></h1>
+          <h1 class="post-title" itemprop="name headline">Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree / 使用双向队列解决二叉树右视图问题</h1>
         
 
         <div class="post-meta">
@@ -343,9 +342,7 @@
       
 
       
-        
-          
-            <h2 id="Using-Double-ended-Queue-Deque-to-Solve-Right-side-View-Problem-of-Binary-Tree"><a href="#Using-Double-ended-Queue-Deque-to-Solve-Right-side-View-Problem-of-Binary-Tree" class="headerlink" title="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree"></a>Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree</h2><blockquote>
+        <h2 id="Using-Double-ended-Queue-Deque-to-Solve-Right-side-View-Problem-of-Binary-Tree"><a href="#Using-Double-ended-Queue-Deque-to-Solve-Right-side-View-Problem-of-Binary-Tree" class="headerlink" title="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree"></a>Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree</h2><blockquote>
 <p>Given a binary tree, imagine yourself standing on the <em>right</em> side of it, return the values of the nodes you can see ordered from top to bottom.</p>
 <p><strong>Example:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; Input: [1,2,3,null,5,null,4]</span><br><span class="line">&gt; Output: [1, 3, 4]</span><br><span class="line">&gt; Explanation:</span><br><span class="line">&gt; </span><br><span class="line">&gt;    1            &lt;---</span><br><span class="line">&gt;  /   \</span><br><span class="line">&gt; 2     3         &lt;---</span><br><span class="line">&gt;  \     \</span><br><span class="line">&gt;   5     4       &lt;---</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
@@ -363,8 +360,6 @@
 <p>This solution using deque to deal every level of the tree, finding the last element of an level, which is the right-side node we are finding.</p>
 <p>用双向队列遍历每一层，每一层的最右边元素就是要找的右视图结点。</p>
 
-          
-        
       
     </div>
     
@@ -379,221 +374,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/iOS 面试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hou Qinhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Playful Heart">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/09/iOS 面试/" itemprop="url">iOS Interview</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T14:55:46+08:00">
-                2019-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
           
-
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-            
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="iOS-面试"><a href="#iOS-面试" class="headerlink" title="iOS 面试"></a>iOS 面试</h2><h4 id="简述内存管理基本原则"><a href="#简述内存管理基本原则" class="headerlink" title="简述内存管理基本原则"></a><strong>简述内存管理基本原则</strong></h4><ol>
-<li>iOS 5.0 之前。采用 MRC 手动管理机制，遵循「谁创建，谁释放；谁引用，谁管理」，创建或引用对象时，需要发生 alloc 、copy、retain 等消息，当释放该对象时需要发送 release 消息，引用计数为 0 时系统释放对象。</li>
-<li>iOS 5.0 之后。采用 ARC 自动引用计数，不再需要调用 retain、release、autorelease。采用 strong，weak 关键字：它引用strong和weak关键字，strong修饰的指针变量指向对象时，当指针指向新值或者指针不复存在，相关联的对象就会自动释放，而weak修饰的指针变量指向对象，当对象的拥有者指向新值或者不存在时weak修饰的指针会自动置为nil。</li>
-</ol>
-<h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a><strong>MVC</strong></h4><ol>
-<li><p>Controller 和 View 之间通过 DataSource&amp;Delegate</p>
-</li>
-<li><p>Controller 和 Model 之间通过 Notification&amp;KVO</p>
-</li>
-<li><p>View 可以设置 action，Controller 设置 target。</p>
-</li>
-</ol>
-<blockquote>
-<p>Controller是Model和View的协调者，Controller把Model中的数据拿过来给View用。Controller可以直接与Model和View进行通信，而View不能和Controller直接通信。View与Controller通信需要利用代理协议的方式，当有数据更新时，Model也要与Controller进行通信，这个时候就要用Notification和KVO，这个方式就像一个广播一样，MOdel发信号，Controller设置监听接受信号，当有数据更新时就发信号给Controller，Model和View不能直接进行通信，这样会违背MVC设计模式。</p>
-</blockquote>
-<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><p>Model, View, Modelview.</p>
-<h4 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h4><h4 id="SDWebImage"><a href="#SDWebImage" class="headerlink" title="SDWebImage"></a>SDWebImage</h4><h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h5><p>可选以队列/栈两种顺序下载，下载放在 NSOperationQueue 队列中完成。每个图片下载都会对应一些回调操作，通过 block 来实现。</p>
-<p>回调信息存储在 URLCallbacks 属性，这是一个字典，key 是 url，value 是数组。使用 barrierQueue 队列设置屏障来保证同一时间只有一个线程来操作 URLCallbacks。</p>
-<h5 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h5><p>内存缓存通过NSCache实现。NSCache 类似集合，存储 KEY - VALUE 对。</p>
-<p>磁盘缓存通过 NSFileManager 实现，存储于 Cache 文件夹。另外 SDImageCache 定义一个串行队列用来异步存储图片。</p>
-<p>图片用 key 值索引，在内存中是 NSCache 的 key 值，磁盘中 key 作为图片的文件名。对于下载图片而言，url 是 key 的最佳选择。</p>
-<h4 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h4><ol>
-<li>NSThread</li>
-<li>NSOperationQueue。创建操作绑定方法，把操作添加到操作队列中时，操作绑定的方法就自动执行，操作添加到操作队列中时，默认会调用 main 方法。</li>
-<li>GCD</li>
-</ol>
-<h4 id="Weak"><a href="#Weak" class="headerlink" title="Weak"></a>Weak</h4><p>runtime 维护一个 weak 表，用于存储每个对象的所有 weak 指针。</p>
-<p>weak表是一个哈希表，kay 指向对象地址，value 指向 weak 指针地址数组。</p>
-<h5 id="实现原理："><a href="#实现原理：" class="headerlink" title="实现原理："></a>实现原理：</h5><ol>
-<li>初始化时，runtime 调用 objc_initWeak 函数，初始化一个新的 weak 指针指向对象的地址。</li>
-<li>添加引用时，objc_initWeak 函数会调用 objc_storeWeak() 用来更新指针指向，创建对应的弱引用表。</li>
-<li>释放 clearDeealcating 函数，根据对象地址获取所有 weak 指针地址数组，然后遍历数组把其中数据设为 nil，最后把 entry 删除。</li>
-</ol>
-<h4 id="iOS-生命周期"><a href="#iOS-生命周期" class="headerlink" title="iOS 生命周期"></a>iOS 生命周期</h4><ol>
-<li>五种状态</li>
-</ol>
-<blockquote>
-<p>Not running：app还没运行</p>
-<p>Inactive：app运行在foreground但没有接收事件</p>
-<p>Active：app运行在foreground和正在接收事件</p>
-<p>Background：运行在background和正在执行代码</p>
-<p>Suspended：运行在background但没有执行代码</p>
-<p><a href="https://www.jianshu.com/p/aa50e5350852" target="_blank" rel="noopener">参考文章，讲得很细</a></p>
-</blockquote>
-<h4 id="iOS-网络连接"><a href="#iOS-网络连接" class="headerlink" title="iOS 网络连接"></a>iOS 网络连接</h4><ol>
-<li>NSURLSession 进行 HTTP/HTTPS 请求的过程</li>
-</ol>
-<ul>
-<li>建立NSURLSessionTask 并且 resume.</li>
-<li>检查 cache 策略，如果有 cache 从本地返回数据</li>
-<li>通过 DNS 进行域名查找</li>
-<li>建立 TCP 连接</li>
-<li>(HTTPS) 进行 TLS 握手</li>
-<li>开始请求，收到 HTTP Response</li>
-<li>接受 HTTP Data</li>
-</ul>
-<h4 id="Runloop"><a href="#Runloop" class="headerlink" title="Runloop"></a>Runloop</h4><ol>
-<li>结构 RunloopMode 代表 runloop 的运行模式</li>
-</ol>
-<ul>
-<li>name</li>
-<li>source0</li>
-<li>source1</li>
-<li>observer</li>
-<li>timer</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/09/iOS 面试/" rel="next" title="iOS Interview">
+                <i class="fa fa-chevron-left"></i> iOS Interview
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -603,10 +417,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -614,6 +429,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -634,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -711,6 +539,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Double-ended-Queue-Deque-to-Solve-Right-side-View-Problem-of-Binary-Tree"><span class="nav-number">1.</span> <span class="nav-text">Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Solution-Code"><span class="nav-number">1.0.1.</span> <span class="nav-text">Solution Code</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -858,6 +702,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
