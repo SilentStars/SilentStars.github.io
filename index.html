@@ -82,7 +82,7 @@
 <meta name="description" content="Need for other&apos;s acceptable makes you invisible.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Playful Heart">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://houqinhan.com/index.html">
 <meta property="og:site_name" content="Playful Heart">
 <meta property="og:description" content="Need for other&apos;s acceptable makes you invisible.">
 <meta property="og:locale" content="Chinese">
@@ -118,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://houqinhan.com/">
 
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/24/Deque/">
+    <link itemprop="mainEntityOfPage" href="http://houqinhan.com/2019/03/28/Leetcode-53-Using-DP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hou Qinhan">
@@ -271,7 +271,177 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/24/Deque/" itemprop="url">Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree / 使用双向队列解决二叉树右视图问题</a></h1>
+                <a class="post-title-link" href="/2019/03/28/Leetcode-53-Using-DP/" itemprop="url">[Leetcode 53]Using DP & Introduction to DP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T20:48:15+08:00">
+                2019-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-Introduction-to-DP"><a href="#1-Introduction-to-DP" class="headerlink" title="1. Introduction to DP"></a>1. Introduction to DP</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
+<li>动态规划(Dynamic Programming) 本质上是将一个问题拆分为几个子问题，通过分别求出子问题的最优解，得到大问题的最优解。</li>
+<li>动态规划具有以下两个性质：</li>
+</ul>
+<ol>
+<li><strong>无后效性</strong>：「未来与过去无关」。如果给定某一阶段的状态，则在这一阶段以后过程的发展不受这阶段以前各段状态的影响。</li>
+<li><strong>最优子结构</strong>：大问题的<strong>最优解</strong>可以由小问题的<strong>最优解</strong>推出，这个性质叫做“最优子结构性质”。</li>
+</ol>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><blockquote>
+<p>给定一个城市的地图，所有的道路都是单行道，而且不会构成环。每条道路都有过路费，问从S点到T点花费的最少费用。</p>
+<p><img src="/images/DP.jpg" alt="DP"></p>
+</blockquote>
+<p><img src="https://www.zhihu.com/equation?tex=f%28P%29%3D%5Cmin%E2%81%A1%5C%7Bf%28R%29%2Bw_%7BR%E2%86%92P%7D%5C%7D" alt="f(P)=\min⁡\{f(R)+w_{R→P}\}"></p>
+<p>　其中 R 为有路通到 P 的所有的点， <img src="https://www.zhihu.com/equation?tex=w_%7BR%E2%86%92P%7D" alt="w_{R→P}"> 为 R 到 P 的过路费。</p>
+<h4 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h4><p>DP 的核心思想在于：<strong>在可能的解空间内寻找最优解</strong>。枚举法得到最大的可能解空间，而DP则是枚举可能的解，即<strong>动态规划自带减枝</strong>。</p>
+<p>设计DP算法的核心在于：</p>
+<blockquote>
+<p>首先，把我们面对的<strong>局面</strong>表示为x。这一步称为<strong>设计状态</strong>。<br>对于状态x，记我们要求出的答案(e.g. 最小费用)为f(x).我们的目标是求出f(T).<br><strong>找出f(x)与哪些局面有关（记为p）</strong>，写出一个式子（称为<strong>状态转移方程</strong>），通过f(p)来推出f(x).</p>
+</blockquote>
+<h3 id="2-Leetcode-53"><a href="#2-Leetcode-53" class="headerlink" title="2. Leetcode 53"></a>2. Leetcode 53</h3><blockquote>
+<p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Input: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">&gt; Output: 6</span><br><span class="line">&gt; Explanation: [4,-1,2,1] has the largest sum = 6.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>求最小子串的问题通常考虑DP算法。就本题目而言，我们需要求出和最大的子串，所需求的和为 $f(x_{i+1})$.</p>
+<p>有 $ f(x_{i+1}) = max  \{ f(x_i) , f(x_{next}) \}$ 即对于 $ i + 1$ 个元素而言，最大值可能是上 i 个元素的值，也可能是涉及下一个元素的值 $f_{next}$.</p>
+<p>而又有 $f_{next} = max \{f(x_i)+x_{i+1}, x_{i+1} \}$ ​ ，即涉及下一个元素时，取原有数值加下一个元素，或直接取下一个元素。</p>
+<p>因此得到代码:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> maxNum = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">var</span> maxEnd = nums[<span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..&lt;nums.<span class="built_in">count</span> &#123;</span><br><span class="line">            maxEnd = <span class="built_in">max</span>(maxEnd + nums[i], nums[i])</span><br><span class="line">            maxNum = <span class="built_in">max</span>(maxEnd, maxNum)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> maxNum</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://houqinhan.com/2019/03/24/Deque/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hou Qinhan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Playful Heart">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/24/Deque/" itemprop="url">[Leetcode 199] Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree / 使用双向队列解决二叉树右视图问题</a></h1>
         
 
         <div class="post-meta">
@@ -345,7 +515,7 @@
       
         
           
-            <h2 id="Using-Double-ended-Queue-Deque-to-Solve-Right-side-View-Problem-of-Binary-Tree"><a href="#Using-Double-ended-Queue-Deque-to-Solve-Right-side-View-Problem-of-Binary-Tree" class="headerlink" title="Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree"></a>Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree</h2><blockquote>
+            <blockquote>
 <p>Given a binary tree, imagine yourself standing on the <em>right</em> side of it, return the values of the nodes you can see ordered from top to bottom.</p>
 <p><strong>Example:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; Input: [1,2,3,null,5,null,4]</span><br><span class="line">&gt; Output: [1, 3, 4]</span><br><span class="line">&gt; Explanation:</span><br><span class="line">&gt; </span><br><span class="line">&gt;    1            &lt;---</span><br><span class="line">&gt;  /   \</span><br><span class="line">&gt; 2     3         &lt;---</span><br><span class="line">&gt;  \     \</span><br><span class="line">&gt;   5     4       &lt;---</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
@@ -410,7 +580,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/09/iOS 面试/">
+    <link itemprop="mainEntityOfPage" href="http://houqinhan.com/2019/03/09/iOS 面试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hou Qinhan">
@@ -650,7 +820,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -915,6 +1085,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
