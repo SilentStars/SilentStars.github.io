@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="iOS,interview,OS,">
 
 
 
@@ -79,16 +79,21 @@
 
 
 
-<meta name="description" content="Need for other&apos;s acceptable makes you invisible.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Playful Heart">
-<meta property="og:url" content="http://houqinhan.com/index.html">
+<meta name="description" content="Process and Thread in Operating SystemIntrodaction Process, 即进程。 计算机上所有可运行的软件，包括操作系统，被组织成若干顺序进程，简称进程。 一个进程就是一个正在执行程序的实例，包括程序计数器，寄存器和变量值，每个进程都有一个虚拟 CPU。 单个处理器通过调度算法决定何时停止一个进程的工作，转而为另一个进程服务。 同一段程序运行两遍算作">
+<meta name="keywords" content="iOS,interview,OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Multiple Thread] Process and Thread in OS &amp; GCD in iOS">
+<meta property="og:url" content="http://houqinhan.com/2019/03/29/Operating-System-Process-and-Thread/index.html">
 <meta property="og:site_name" content="Playful Heart">
-<meta property="og:description" content="Need for other&apos;s acceptable makes you invisible.">
+<meta property="og:description" content="Process and Thread in Operating SystemIntrodaction Process, 即进程。 计算机上所有可运行的软件，包括操作系统，被组织成若干顺序进程，简称进程。 一个进程就是一个正在执行程序的实例，包括程序计数器，寄存器和变量值，每个进程都有一个虚拟 CPU。 单个处理器通过调度算法决定何时停止一个进程的工作，转而为另一个进程服务。 同一段程序运行两遍算作">
 <meta property="og:locale" content="Chinese">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/4/9/162a8a44aa04f448?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/4/9/162a8a44afb4a654?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:updated_time" content="2019-03-29T16:09:26.313Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Playful Heart">
-<meta name="twitter:description" content="Need for other&apos;s acceptable makes you invisible.">
+<meta name="twitter:title" content="[Multiple Thread] Process and Thread in OS &amp; GCD in iOS">
+<meta name="twitter:description" content="Process and Thread in Operating SystemIntrodaction Process, 即进程。 计算机上所有可运行的软件，包括操作系统，被组织成若干顺序进程，简称进程。 一个进程就是一个正在执行程序的实例，包括程序计数器，寄存器和变量值，每个进程都有一个虚拟 CPU。 单个处理器通过调度算法决定何时停止一个进程的工作，转而为另一个进程服务。 同一段程序运行两遍算作">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/4/9/162a8a44aa04f448?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 
 
 
@@ -118,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://houqinhan.com/">
+  <link rel="canonical" href="http://houqinhan.com/2019/03/29/Operating-System-Process-and-Thread/">
 
 
 
 
 
-  <title>Playful Heart</title>
+  <title>[Multiple Thread] Process and Thread in OS & GCD in iOS | Playful Heart</title>
   
 
 
@@ -143,8 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,9 +241,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -269,9 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/29/Operating-System-Process-and-Thread/" itemprop="url">[Multiple Thread] Process and Thread in OS & GCD in iOS</a></h1>
+          <h1 class="post-title" itemprop="name headline">[Multiple Thread] Process and Thread in OS & GCD in iOS</h1>
         
 
         <div class="post-meta">
@@ -343,9 +345,7 @@
       
 
       
-        
-          
-            <h2 id="Process-and-Thread-in-Operating-System"><a href="#Process-and-Thread-in-Operating-System" class="headerlink" title="Process and Thread in Operating System"></a>Process and Thread in Operating System</h2><h3 id="Introdaction"><a href="#Introdaction" class="headerlink" title="Introdaction"></a>Introdaction</h3><ol>
+        <h2 id="Process-and-Thread-in-Operating-System"><a href="#Process-and-Thread-in-Operating-System" class="headerlink" title="Process and Thread in Operating System"></a>Process and Thread in Operating System</h2><h3 id="Introdaction"><a href="#Introdaction" class="headerlink" title="Introdaction"></a>Introdaction</h3><ol>
 <li><strong>Process</strong>, 即<strong>进程</strong>。<ul>
 <li>计算机上所有可运行的软件，包括操作系统，被组织成若干顺序进程，简称<strong>进程</strong>。</li>
 <li>一个进程就是一个正在执行程序的实例，包括程序计数器，寄存器和变量值，每个进程都有一个虚拟 CPU。</li>
@@ -545,8 +545,6 @@
 <li><a href="https://juejin.im/post/5acaea17f265da239a601a01" target="_blank" rel="noopener">iOS Swift GCD 开发教程</a></li>
 </ol>
 
-          
-        
       
     </div>
     
@@ -561,342 +559,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houqinhan.com/2019/03/28/Leetcode-53-Using-DP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hou Qinhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Playful Heart">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/28/Leetcode-53-Using-DP/" itemprop="url">[Leetcode 53]Using DP & Introduction to DP</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T20:48:15+08:00">
-                2019-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-
+            <a href="/tags/interview/" rel="tag"># interview</a>
           
-            
+            <a href="/tags/OS/" rel="tag"># OS</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-Introduction-to-DP"><a href="#1-Introduction-to-DP" class="headerlink" title="1. Introduction to DP"></a>1. Introduction to DP</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
-<li>动态规划(Dynamic Programming) 本质上是将一个问题拆分为几个子问题，通过分别求出子问题的最优解，得到大问题的最优解。</li>
-<li>动态规划具有以下两个性质：</li>
-</ul>
-<ol>
-<li><strong>无后效性</strong>：「未来与过去无关」。如果给定某一阶段的状态，则在这一阶段以后过程的发展不受这阶段以前各段状态的影响。</li>
-<li><strong>最优子结构</strong>：大问题的<strong>最优解</strong>可以由小问题的<strong>最优解</strong>推出，这个性质叫做“最优子结构性质”。</li>
-</ol>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><blockquote>
-<p>给定一个城市的地图，所有的道路都是单行道，而且不会构成环。每条道路都有过路费，问从S点到T点花费的最少费用。</p>
-<p><img src="/images/DP.jpg" alt="DP"></p>
-</blockquote>
-<p><img src="https://www.zhihu.com/equation?tex=f%28P%29%3D%5Cmin%E2%81%A1%5C%7Bf%28R%29%2Bw_%7BR%E2%86%92P%7D%5C%7D" alt="f(P)=\min⁡\{f(R)+w_{R→P}\}"></p>
-<p>　其中 R 为有路通到 P 的所有的点， <img src="https://www.zhihu.com/equation?tex=w_%7BR%E2%86%92P%7D" alt="w_{R→P}"> 为 R 到 P 的过路费。</p>
-<h4 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h4><p>DP 的核心思想在于：<strong>在可能的解空间内寻找最优解</strong>。枚举法得到最大的可能解空间，而DP则是枚举可能的解，即<strong>动态规划自带减枝</strong>。</p>
-<p>设计DP算法的核心在于：</p>
-<blockquote>
-<p>首先，把我们面对的<strong>局面</strong>表示为x。这一步称为<strong>设计状态</strong>。<br>对于状态x，记我们要求出的答案(e.g. 最小费用)为f(x).我们的目标是求出f(T).<br><strong>找出f(x)与哪些局面有关（记为p）</strong>，写出一个式子（称为<strong>状态转移方程</strong>），通过f(p)来推出f(x).</p>
-</blockquote>
-<h3 id="2-Leetcode-53"><a href="#2-Leetcode-53" class="headerlink" title="2. Leetcode 53"></a>2. Leetcode 53</h3><blockquote>
-<p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Input: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">&gt; Output: 6</span><br><span class="line">&gt; Explanation: [4,-1,2,1] has the largest sum = 6.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>求最小子串的问题通常考虑DP算法。就本题目而言，我们需要求出和最大的子串，所需求的和为 $f(x_{i+1})$.</p>
-<p>有 $ f(x_{i+1}) = max  \{ f(x_i) , f(x_{next}) \}$ 即对于 $ i + 1$ 个元素而言，最大值可能是上 i 个元素的值，也可能是涉及下一个元素的值 $f_{next}$.</p>
-<p>而又有 $f_{next} = max \{f(x_i)+x_{i+1}, x_{i+1} \}$ ​ ，即涉及下一个元素时，取原有数值加下一个元素，或直接取下一个元素。</p>
-<p>因此得到代码:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(<span class="number">_</span> nums: [Int])</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> maxNum = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">var</span> maxEnd = nums[<span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">1</span>..&lt;nums.<span class="built_in">count</span> &#123;</span><br><span class="line">            maxEnd = <span class="built_in">max</span>(maxEnd + nums[i], nums[i])</span><br><span class="line">            maxNum = <span class="built_in">max</span>(maxEnd, maxNum)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> maxNum</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houqinhan.com/2019/03/24/Deque/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hou Qinhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Playful Heart">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/24/Deque/" itemprop="url">[Leetcode 199] Using Double-ended Queue(Deque) to Solve Right-side View Problem of Binary Tree / 使用双向队列解决二叉树右视图问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-24T14:42:30+08:00">
-                2019-03-24
-              </time>
+              <a href="/2019/03/28/Leetcode-53-Using-DP/" rel="next" title="[Leetcode 53]Using DP & Introduction to DP">
+                <i class="fa fa-chevron-left"></i> [Leetcode 53]Using DP & Introduction to DP
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <blockquote>
-<p>Given a binary tree, imagine yourself standing on the <em>right</em> side of it, return the values of the nodes you can see ordered from top to bottom.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; Input: [1,2,3,null,5,null,4]</span><br><span class="line">&gt; Output: [1, 3, 4]</span><br><span class="line">&gt; Explanation:</span><br><span class="line">&gt; </span><br><span class="line">&gt;    1            &lt;---</span><br><span class="line">&gt;  /   \</span><br><span class="line">&gt; 2     3         &lt;---</span><br><span class="line">&gt;  \     \</span><br><span class="line">&gt;   5     4       &lt;---</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="Solution-Code"><a href="#Solution-Code" class="headerlink" title="Solution Code"></a>Solution Code</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">rightSideView</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; r = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> r;</span><br><span class="line">    Deque&lt;TreeNode&gt; dq = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    dq.offer(root);</span><br><span class="line">    TreeNode prev, cur;</span><br><span class="line">    <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (!dq.isEmpty()) &#123;</span><br><span class="line">        size = dq.size();</span><br><span class="line">        prev = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            cur = dq.poll();</span><br><span class="line">            <span class="keyword">if</span> (cur.left != <span class="keyword">null</span>) dq.offer(cur.left);</span><br><span class="line">            <span class="keyword">if</span> (cur.right != <span class="keyword">null</span>) dq.offer(cur.right);</span><br><span class="line">            prev = cur;</span><br><span class="line">        &#125;</span><br><span class="line">        r.add(prev.val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Using a deque to traverse the tree.</p>
-<p>Take test case [4, 3, 6, 1, null, 5, null, null, 2] as an example :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">            4</span><br><span class="line"></span><br><span class="line">        /        \</span><br><span class="line"></span><br><span class="line">    3             6</span><br><span class="line"></span><br><span class="line">  /               /</span><br><span class="line"></span><br><span class="line">1              5</span><br><span class="line"></span><br><span class="line">   \</span><br><span class="line"></span><br><span class="line">      2</span><br></pre></td></tr></table></figure>
-<p>And the deque changes like that :</p>
-<p>[4],  prev = 4, cur = 4;</p>
-<p>[3, 6], prev = 6, cur = 6;</p>
-<p>[1, 5], prve = 5, cur = 5;</p>
-<p>[2], prve = 2, cur = 2.</p>
-<p>Then the result is [4, 6, 5, 2].</p>
-<p>This solution using deque to deal every level of the tree, finding the last element of an level, which is the right-side node we are finding.</p>
-<p>用双向队列遍历每一层，每一层的最右边元素就是要找的右视图结点。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -906,217 +602,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://houqinhan.com/2019/03/09/iOS 面试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hou Qinhan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Playful Heart">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/09/iOS 面试/" itemprop="url">iOS Interview</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-09T14:55:46+08:00">
-                2019-03-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="iOS-面试"><a href="#iOS-面试" class="headerlink" title="iOS 面试"></a>iOS 面试</h2><h4 id="简述内存管理基本原则"><a href="#简述内存管理基本原则" class="headerlink" title="简述内存管理基本原则"></a><strong>简述内存管理基本原则</strong></h4><ol>
-<li>iOS 5.0 之前。采用 MRC 手动管理机制，遵循「谁创建，谁释放；谁引用，谁管理」，创建或引用对象时，需要发生 alloc 、copy、retain 等消息，当释放该对象时需要发送 release 消息，引用计数为 0 时系统释放对象。</li>
-<li>iOS 5.0 之后。采用 ARC 自动引用计数，不再需要调用 retain、release、autorelease。采用 strong，weak 关键字：它引用strong和weak关键字，strong修饰的指针变量指向对象时，当指针指向新值或者指针不复存在，相关联的对象就会自动释放，而weak修饰的指针变量指向对象，当对象的拥有者指向新值或者不存在时weak修饰的指针会自动置为nil。</li>
-</ol>
-<h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a><strong>MVC</strong></h4><ol>
-<li><p>Controller 和 View 之间通过 DataSource&amp;Delegate</p>
-</li>
-<li><p>Controller 和 Model 之间通过 Notification&amp;KVO</p>
-</li>
-<li><p>View 可以设置 action，Controller 设置 target。</p>
-</li>
-</ol>
-<blockquote>
-<p>Controller是Model和View的协调者，Controller把Model中的数据拿过来给View用。Controller可以直接与Model和View进行通信，而View不能和Controller直接通信。View与Controller通信需要利用代理协议的方式，当有数据更新时，Model也要与Controller进行通信，这个时候就要用Notification和KVO，这个方式就像一个广播一样，MOdel发信号，Controller设置监听接受信号，当有数据更新时就发信号给Controller，Model和View不能直接进行通信，这样会违背MVC设计模式。</p>
-</blockquote>
-<h4 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h4><p>Model, View, Modelview.</p>
-<h4 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h4><h4 id="SDWebImage"><a href="#SDWebImage" class="headerlink" title="SDWebImage"></a>SDWebImage</h4><h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h5><p>可选以队列/栈两种顺序下载，下载放在 NSOperationQueue 队列中完成。每个图片下载都会对应一些回调操作，通过 block 来实现。</p>
-<p>回调信息存储在 URLCallbacks 属性，这是一个字典，key 是 url，value 是数组。使用 barrierQueue 队列设置屏障来保证同一时间只有一个线程来操作 URLCallbacks。</p>
-<h5 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h5><p>内存缓存通过NSCache实现。NSCache 类似集合，存储 KEY - VALUE 对。</p>
-<p>磁盘缓存通过 NSFileManager 实现，存储于 Cache 文件夹。另外 SDImageCache 定义一个串行队列用来异步存储图片。</p>
-<p>图片用 key 值索引，在内存中是 NSCache 的 key 值，磁盘中 key 作为图片的文件名。对于下载图片而言，url 是 key 的最佳选择。</p>
-<h4 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h4><ol>
-<li>NSThread</li>
-<li>NSOperationQueue。创建操作绑定方法，把操作添加到操作队列中时，操作绑定的方法就自动执行，操作添加到操作队列中时，默认会调用 main 方法。</li>
-<li>GCD</li>
-</ol>
-<h4 id="Weak"><a href="#Weak" class="headerlink" title="Weak"></a>Weak</h4><p>runtime 维护一个 weak 表，用于存储每个对象的所有 weak 指针。</p>
-<p>weak表是一个哈希表，kay 指向对象地址，value 指向 weak 指针地址数组。</p>
-<h5 id="实现原理："><a href="#实现原理：" class="headerlink" title="实现原理："></a>实现原理：</h5><ol>
-<li>初始化时，runtime 调用 objc_initWeak 函数，初始化一个新的 weak 指针指向对象的地址。</li>
-<li>添加引用时，objc_initWeak 函数会调用 objc_storeWeak() 用来更新指针指向，创建对应的弱引用表。</li>
-<li>释放 clearDeealcating 函数，根据对象地址获取所有 weak 指针地址数组，然后遍历数组把其中数据设为 nil，最后把 entry 删除。</li>
-</ol>
-<h4 id="iOS-生命周期"><a href="#iOS-生命周期" class="headerlink" title="iOS 生命周期"></a>iOS 生命周期</h4><ol>
-<li>五种状态</li>
-</ol>
-<blockquote>
-<p>Not running：app还没运行</p>
-<p>Inactive：app运行在foreground但没有接收事件</p>
-<p>Active：app运行在foreground和正在接收事件</p>
-<p>Background：运行在background和正在执行代码</p>
-<p>Suspended：运行在background但没有执行代码</p>
-<p><a href="https://www.jianshu.com/p/aa50e5350852" target="_blank" rel="noopener">参考文章，讲得很细</a></p>
-</blockquote>
-<h4 id="iOS-网络连接"><a href="#iOS-网络连接" class="headerlink" title="iOS 网络连接"></a>iOS 网络连接</h4><ol>
-<li>NSURLSession 进行 HTTP/HTTPS 请求的过程</li>
-</ol>
-<ul>
-<li>建立NSURLSessionTask 并且 resume.</li>
-<li>检查 cache 策略，如果有 cache 从本地返回数据</li>
-<li>通过 DNS 进行域名查找</li>
-<li>建立 TCP 连接</li>
-<li>(HTTPS) 进行 TLS 握手</li>
-<li>开始请求，收到 HTTP Response</li>
-<li>接受 HTTP Data</li>
-</ul>
-<h4 id="Runloop"><a href="#Runloop" class="headerlink" title="Runloop"></a>Runloop</h4><ol>
-<li>结构 RunloopMode 代表 runloop 的运行模式</li>
-</ol>
-<ul>
-<li>name</li>
-<li>source0</li>
-<li>source1</li>
-<li>observer</li>
-<li>timer</li>
-</ul>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -1124,6 +614,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1144,8 +638,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1221,6 +724,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Process-and-Thread-in-Operating-System"><span class="nav-number">1.</span> <span class="nav-text">Process and Thread in Operating System</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Introdaction"><span class="nav-number">1.1.</span> <span class="nav-text">Introdaction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inter-Process-Communication-IPC"><span class="nav-number">1.2.</span> <span class="nav-text">Inter Process Communication (IPC)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#忙等待"><span class="nav-number">1.2.1.</span> <span class="nav-text">忙等待</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#睡眠与唤醒"><span class="nav-number">1.2.2.</span> <span class="nav-text">睡眠与唤醒</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他方法：信号量、互斥量（mutex）、管程、消息传递、屏障、避免锁等。"><span class="nav-number">1.2.3.</span> <span class="nav-text">其他方法：信号量、互斥量（mutex）、管程、消息传递、屏障、避免锁等。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS-中的多线程之-GCD-（Grand-Central-Dispatch）"><span class="nav-number">2.</span> <span class="nav-text">iOS 中的多线程之 GCD （Grand Central Dispatch）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">2.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#任务"><span class="nav-number">2.1.1.</span> <span class="nav-text">任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#队列（Dispatch-Queue）"><span class="nav-number">2.1.2.</span> <span class="nav-text">队列（Dispatch Queue）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用步骤"><span class="nav-number">2.2.</span> <span class="nav-text">使用步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#swift-使用"><span class="nav-number">2.2.1.</span> <span class="nav-text">swift 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#队列的声明"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">队列的声明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加队列任务"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">添加队列任务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#任务和队列的特性"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">任务和队列的特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细属性"><span class="nav-number">2.3.</span> <span class="nav-text">详细属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#QoS"><span class="nav-number">2.3.1.</span> <span class="nav-text">QoS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Attributes"><span class="nav-number">2.3.2.</span> <span class="nav-text">Attributes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AutoreleaseFrequency"><span class="nav-number">2.3.3.</span> <span class="nav-text">AutoreleaseFrequency</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Target"><span class="nav-number">2.3.4.</span> <span class="nav-text">Target</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任务组"><span class="nav-number">2.4.</span> <span class="nav-text">任务组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建任务组"><span class="nav-number">2.4.1.</span> <span class="nav-text">创建任务组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加入任务"><span class="nav-number">2.4.2.</span> <span class="nav-text">加入任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通知"><span class="nav-number">2.4.3.</span> <span class="nav-text">通知</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TJUBBS-中的使用举例"><span class="nav-number">2.5.</span> <span class="nav-text">TJUBBS 中的使用举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1368,6 +887,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
