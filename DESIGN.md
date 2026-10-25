@@ -44,8 +44,9 @@
 - Respect system reduced-motion preferences in theme components.
 
 ## Responsive behavior
-- Use theme breakpoints. Portrait sits to the right on wider screens and above the text on phones.
+- Portrait sits to the right on wider screens and above the text on phones. Navigation collapses below 768px so all six links fit comfortably.
 - Publication and CV entries must fit narrow screens without horizontal scrolling.
+- CV dates stack above the details below 768px, and the CV sidebar is hidden at that width to preserve reading space.
 - Navigation collapses into a keyboard-accessible menu on small screens.
 
 ## Interaction states
