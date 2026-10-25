@@ -1,83 +1,69 @@
-# Qinhan Hou — academic homepage
+# Qinhan Hou 的学术主页
 
-网站：https://silentstars.github.io/
+网址：https://silentstars.github.io/<br>
+主题：[al-folio](https://github.com/alshedivat/al-folio) · GitHub Pages 免费托管
 
-使用 [Academic Pages](https://github.com/academicpages/academicpages.github.io) 模板，通过 GitHub Pages 发布。
+本地仓库放在 `/Users/qinhanhou/Sync/blog`。修改文字后提交并推送，GitHub 会自动更新网站；一般等 Actions 中的部署完成后就能看到。
 
-## 以后怎么更新
+## 内容改哪里
 
-可以直接在本对话发来新内容，让助手更新并发布。自己修改时，在 GitHub 打开对应文件，点击铅笔编辑，选择 **Commit changes**，提交到 `master` 分支。GitHub Actions 构建、发布成功后，网站会自动更新。
-
-| 想修改的内容 | 对应文件 |
+| 想更新的内容 | 文件 |
 | --- | --- |
-| 姓名、单位、公开邮箱、学术账号链接 | `_config.yml` |
-| 首页简介、研究方向 | `_pages/about.md` |
-| 导航栏目 | `_data/navigation.yml` |
-| CV | `_pages/cv.md` |
-| 每篇论文的标题、作者、会议和链接 | `_publications/` 中对应的 Markdown 文件 |
-| 暑校、合作项目、海报等学术活动 | `_data/activities.yml` |
-| 其他学术报告 | `_talks/` |
-| 教学经历 | `_teaching/` |
-| 头像 | `images/profile.svg`，或在 `_config.yml` 中设置其他图片 |
-| PDF、BibTeX 等下载文件 | `files/` |
+| 首页简介、研究方向、近期活动区的位置 | `_pages/about.md` |
+| 论文列表和首页精选论文 | `_bibliography/papers.bib` |
+| 暑校、poster 等活动 | `_data/activities.yml` |
+| 教学和指导学生 | `_pages/teaching.md` |
+| 网页版 CV | `_data/cv.yml` |
+| 供下载的 CV | `assets/pdf/cv.pdf` |
+| 邮箱、Scholar、ORCID、GitHub 链接 | `_data/socials.yml` |
+| 个人照片 | `assets/img/qinhan-hou.jpg` |
+| 配色和照片的网页显示比例 | `_sass/_personal.scss` |
 
-目前论文展示包含 NeurIPS 2026 主会论文和 NeurIPS 2025 NPGML Workshop 论文。主会条目采用作者确认的新标题，arXiv 链接注明为早期版本。首页简介与研究方向依据论文和活动整理，CV 详情待补充。
+CV 的可编辑源文件仍在 `/Users/qinhanhou/Sync/cv/general/cv.tex`。更新并生成 PDF 后，把新 PDF 放到 `assets/pdf/cv.pdf`，并同步 `_data/cv.yml` 中对应的经历。
 
-## 新增一篇论文
+## 加一篇论文
 
-在 `_publications/` 新建 `YYYY-MM-DD-short-title.md`，参考已有的两篇论文。标题、作者、摘要等写在文件开头的 YAML 区域，`---` 后是详情页正文。
+在 `_bibliography/papers.bib` 里复制一个现有条目，改标题、作者、年份、会议和链接即可。`selected = {true}` 会把它展示在首页；不想放首页就删掉该字段。Workshop、extended abstract、accepted main track 等状态请保留清楚。
+
+主会论文使用新标题 *Avoiding Feature Collapse in Graph ODEs via Hysteretic Topology Evolution*。arXiv:2604.24293 仍是较早版本，因此保留相应说明。
+
+## 写博客
+
+在 `_posts/` 新建 `YYYY-MM-DD-title.md`。开头可以这样写，之后在分隔线下写正文：
 
 ```yaml
 ---
-title: "论文标题"
-collection: publications
-category: conferences
-permalink: /publication/unique-short-title/
-date: "2026-10-25"
-venue: "会议名称"
-track: "Main Track"
-publication_status: "Accepted at"
-selected: true
-authors: ["Qinhan Hou", "合作者姓名"]
-excerpt: "一句话介绍这篇论文。"
-arxivurl: "https://arxiv.org/abs/实际编号"
-paperurl: "https://arxiv.org/pdf/实际编号"
-bibtexurl: "/files/对应的引用文件.bib"
+layout: post
+title: "文章标题"
+date: 2026-10-25
+description: "一句话介绍"
+tags: [graph-learning]
+categories: [research]
 ---
 ```
 
-- `category: conferences` 为主会；`category: workshops` 为 Workshop。
-- `selected: true` 会自动显示在首页；所有条目都会显示在 Publications 页。
-- `publication_status` 可用 `Accepted at` 或 `Presented at`；`status_label: "Accepted"` 可显示录用提示。
-- 主会论文的早期 arXiv 版本可用 `arxiv_label: "arXiv (earlier version)"`。
-- 详情页正文可参考已有文件，使用 `publication-entry.html` 展示作者和原文入口，再补充工作介绍。
-- 论文介绍组件为 `_includes/publication-entry.html`，样式为 `assets/css/publications.css`。首页和 Publications 页共用同一份论文资料。
+博客目前留有真实的空状态，没有填充示例文章。`_drafts/` 中的内容不会发布。
 
-## 新增或修改学术活动
+## 保存并发布
 
-三个活动的资料统一保存在 `_data/activities.yml`，首页、Activities 和海报展示页面会据此更新。文字以个人经历的口吻书写，时间、地点和项目标题保留官方信息。
+```bash
+cd /Users/qinhanhou/Sync/blog
+git add .
+git commit -m "Help readers find my latest research"
+git push origin master
+```
 
-新增活动时复制一条已有记录，修改 `id`、`title`、`date`、`end_date`、`location`、`website`、`description` 和首页简短介绍 `highlight`。
+也可以直接在 GitHub 网页上打开相应文件，点铅笔编辑，再提交。部署状态见仓库的 Actions 标签。
 
-- 暑校使用 `kind: summer_school`、`kind_label: "Summer school"` 和 `role: "Participant"`。
-- 海报使用 `kind: poster`、`kind_label: "Poster presentation"` 和 `role: "Poster presenter"`，会自动出现在 Talks & Posters。
-- 项目可补充 `project_title`、`project_url`、`mentor`；海报可补充 `presentation_title`、`presentation_date`、`authors`、`abstract_url`。
-- `date` 和 `end_date` 使用 `YYYY-MM-DD` 格式。页面按活动时间倒序排列，首页显示最近三项。
+## 本地预览（可选）
 
-## 发布与检查
+使用 Ruby 3.3、Bundler 和 ImageMagick：
 
-`Deploy academic homepage` 工作流会在 `master` 有新提交后构建并部署。仓库 **Settings → Pages → Source** 使用 **GitHub Actions**。可在仓库的 **Actions** 页面查看是否发布成功。
-
-## 本地预览
-
-完整克隆仓库后，使用 Ruby 3.3 和 Bundler：
-
-```sh
-bundle config set --local path vendor/bundle
+```bash
 bundle install
 bundle exec jekyll serve
 ```
 
-## Credits
+浏览器打开 http://localhost:4000/。修改 `_config.yml` 后需要重启预览。正常更新内容不需要在电脑上安装这些工具，GitHub Actions 会负责构建。
 
-Based on Academic Pages and the Minimal Mistakes theme. The original MIT license and theme attribution are retained in `LICENSE` and the site footer.
+设计约定见 DESIGN.md；主题来源和更新说明见 THEME.md。

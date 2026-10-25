@@ -1,0 +1,14 @@
+{% assign activity = include.activity %}
+<article class="activity-entry" id="{{ activity.id | escape }}" aria-labelledby="{{ activity.id | escape }}-title">
+  <p class="activity-eyebrow">{{ activity.kind_label | escape }} · {{ activity.location | escape }}</p>
+  <h3 id="{{ activity.id | escape }}-title"><a href="{{ activity.website | escape }}">{{ activity.title | escape }}</a></h3>
+  <p class="activity-dates"><time datetime="{{ activity.date }}">{{ activity.date | date: '%-d' }}</time>–<time datetime="{{ activity.end_date }}">{{ activity.end_date | date: '%-d %B %Y' }}</time></p>
+  <p>{{ activity.description | escape }}</p>
+  {% if activity.project_title %}
+    <p><strong>Project:</strong> <a href="{{ activity.project_url }}">{{ activity.project_title | escape }}</a><br>With {{ activity.mentor | escape }} as our mentor.</p>
+  {% endif %}
+  {% if activity.presentation_title %}
+    <p><strong>Poster:</strong> {{ activity.presentation_title | escape }}<br>{{ activity.authors | join: ', ' }} · {{ activity.presentation_date | date: '%-d %B %Y' }}</p>
+  {% endif %}
+  <p class="activity-links"><a href="{{ activity.website }}">Event website</a>{% if activity.programme_url %} · <a href="{{ activity.programme_url }}">Programme</a>{% endif %}{% if activity.abstract_url %} · <a href="{{ activity.abstract_url }}">Extended abstract</a>{% endif %}</p>
+</article>

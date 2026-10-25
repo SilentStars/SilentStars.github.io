@@ -1,49 +1,46 @@
 ---
-permalink: /
-title: "About"
-excerpt: "Qinhan Hou at the University of Helsinki, exploring graph learning, information flow and molecular data."
-author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
+layout: about
+title: about
+permalink: "/"
+subtitle: Doctoral Researcher · <a href="https://www.helsinki.fi/en">University of
+  Helsinki</a>
+profile:
+  align: right
+  image: qinhan-hou.jpg
+  image_circular: false
+selected_papers: true
+social: true
+announcements:
+  enabled: false
+latest_posts:
+  enabled: false
 ---
 
-I’m **Qinhan Hou**, and I work on graph machine learning at the [University of Helsinki](https://www.helsinki.fi/en). I study how information moves through graph models and how their structure and dynamics shape what they can learn.
 
-I move between theory and experiments, working with GNNs, Graph ODEs and Graph Transformers. Recent summer schools and collaborative projects have given me opportunities to connect these interests with geometry and bioinformatics.
+I’m **Qinhan Hou**, a doctoral researcher at the University of Helsinki. I study how information moves through graph models, and how the structure of a graph shapes what a model can learn.
 
-## Research
+My work moves between theory and experiments with **graph neural networks, Graph ODEs, and Graph Transformers**. I’m especially interested in what happens as information travels farther: when it helps, when useful differences disappear, and how a model can adapt its connections to the task.
 
-A few themes run through my current work:
+Before Helsinki, I worked with **Jürgen Schmidhuber’s group at the Swiss AI Lab IDSIA**, developing machine learning methods for EMG-based silent speech interfaces. At **Uppsala University’s Deindl Lab**, I worked on computational tools for single-molecule biophysics. These experiences keep me curious about the meeting point of learning methods and biological data.
 
-- **Graph dynamics and information flow.** I study how node representations evolve during propagation, including [feature collapse in Graph ODEs]({{ "/publication/hysteretic-graph-odes/" | relative_url }}) and how adaptive topology can help preserve useful differences.
-- **Graph structure and task locality.** I explore how [Graph Transformers](https://arxiv.org/abs/2604.22413) can match their communication to where a task’s useful information lives, from nearby neighbors to more distant parts of a graph.
-- **Heterophily and graph-level learning.** My work looks at how [local motifs and mixed-frequency dynamics]({{ "/publication/heterophily-graph-level-tasks/" | relative_url }}) affect graph prediction, and how models can combine different kinds of structural signals.
-- **Molecular and biological applications.** I’m interested in graph methods for molecular property prediction, and in the broader connections between deep learning and bioinformatics.
+I hold an MSc in Computer Science from Uppsala University and a BEng in Software Engineering from Tianjin University. Away from my day-to-day research, I enjoy learning with others through summer schools, teaching, and collaborative projects.
 
-## Selected publications
+## research
 
-{% assign selected_publications = site.publications | where: "selected", true | sort: "date" | reverse %}
-{% for publication in selected_publications %}
-{% include publication-entry.html publication=publication %}
-{% endfor %}
+- **Graph dynamics and information flow.** How can continuous-depth models preserve useful differences between nodes? In our [Graph ODE work]({{ '/publication/hysteretic-graph-odes/' | relative_url }}), we study feature collapse and let the graph topology evolve along with its features.
+- **Structure and task locality.** How far should a model look? I explore [Graph Transformer training](https://arxiv.org/abs/2604.22413) that adapts to the distances at which a task’s useful information lives.
+- **Heterophily and graph-level learning.** I study how [local motifs and mixed-frequency dynamics]({{ '/publication/heterophily-graph-level-tasks/' | relative_url }}) shape graph prediction, including molecular property prediction.
+- **Learning from biological signals.** My earlier work spans self-supervised learning for silent speech and computational analysis of single-molecule dynamics. I’m interested in bringing these biological questions into conversation with graph learning.
 
-[All publications]({{ "/publications/" | relative_url }}) &middot; [Google Scholar](https://scholar.google.com/citations?user=Mp2BNQsAAAAJ&hl=en)
+## learning and sharing
 
-## Learning and sharing
+A few recent stops along the way:
 
-A few places where I’ve been learning with others and sharing my research.
-
-{% assign recent_activities = site.data.activities | sort: "date" | reverse %}
-<ul>
+{% assign recent_activities = site.data.activities | sort: 'date' | reverse %}
+<ul class="recent-activities">
 {% for activity in recent_activities limit:3 %}
-  <li><strong><a href="{{ "/activities/" | relative_url }}#{{ activity.id | escape }}">{{ activity.short_title | escape }}</a></strong> &middot; {{ activity.date | date: "%B %Y" }} &middot; {{ activity.kind_label | escape }}<br>{{ activity.highlight | escape }}</li>
+  <li><span class="activity-date">{{ activity.date | date: '%b %Y' }}</span><div><a href="{{ '/activities/' | relative_url }}#{{ activity.id }}">{{ activity.short_title }}</a><p>{{ activity.highlight }}</p></div></li>
 {% endfor %}
 </ul>
 
-[More from these events]({{ "/activities/" | relative_url }})
-
-## More
-
-- [Curriculum vitae](/cv/)
-- [GitHub](https://github.com/SilentStars)
+[More from these events]({{ '/activities/' | relative_url }}) · [Teaching & supervision]({{ '/teaching/' | relative_url }}) · [CV]({{ '/cv/' | relative_url }})

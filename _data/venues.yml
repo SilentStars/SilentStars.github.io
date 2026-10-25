@@ -1,0 +1,16 @@
+NeurIPS:
+  url: https://nips.cc/Conferences/2026/Schedule?showEvent=150833
+  color: "#176a72"
+NPGML:
+  url: https://openreview.net/forum?id=d5cSo1bWhU
+  color: "#547867"
+GSP:
+  url: https://gspworkshop.org/
+  color: "#8c683a"
+Science:
+  url: https://doi.org/10.1126/science.adn5371
+  color: "#7f4b5b"
+EMBC:
+  color: "#66748a"
+APSIPA:
+  color: "#66748a"

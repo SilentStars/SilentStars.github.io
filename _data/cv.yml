@@ -1,0 +1,108 @@
+cv:
+  name: Qinhan Hou
+  label: Doctoral Researcher
+  email: hou.qinhan@helsinki.fi
+  location: Helsinki, Finland
+  summary: I study graph learning and information propagation, with earlier research
+    in silent speech interfaces and single-molecule biophysics.
+  social_networks:
+  - network: GitHub
+    username: SilentStars
+  sections:
+    Experience:
+    - company: University of Helsinki
+      position: Doctoral Researcher
+      location: Helsinki, Finland
+      start_date: '2024-09-01'
+      end_date: present
+      summary: Graph neural networks, Graph Transformers, positional and structural
+        encodings, and information propagation.
+    - company: Swiss AI Lab IDSIA
+      position: Junior Researcher
+      location: Lugano, Switzerland
+      start_date: '2023-02-01'
+      end_date: '2024-08-31'
+      summary: Machine learning research with Prof. Jürgen Schmidhuber’s group.
+      highlights:
+      - Self-supervised learning and EMG-based silent speech interfaces.
+      - Teaching support and master’s thesis co-supervision.
+    - company: Deindl Lab, Uppsala University
+      position: Research Assistant
+      location: Uppsala, Sweden
+      start_date: '2021-07-01'
+      end_date: '2022-10-30'
+      summary: 'Computational methods for single-molecule biophysics: image alignment,
+        sequencing data processing, and molecular time-series analysis.'
+    - company: NetEase Inc.
+      position: Software Developer Intern
+      location: Beijing, China
+      start_date: '2019-07-01'
+      end_date: '2020-08-31'
+      summary: Developed components of a language translation software system.
+    Education:
+    - institution: Uppsala University
+      studyType: MSc
+      area: Computer Science
+      location: Uppsala, Sweden
+      start_date: '2020-09-01'
+      end_date: '2022-10-30'
+      highlights:
+      - 'Thesis: A Pipeline of smFRET Data Processing Combined with NGS Technology.'
+    - institution: Tianjin University
+      studyType: BEng
+      area: Software Engineering
+      location: Tianjin, China
+      start_date: '2016-09-01'
+      end_date: '2020-06-30'
+      highlights:
+      - 'Thesis: Decoding Music Genres Based on High Resolution Brain Activity Information.'
+    Summer Schools and Exchange:
+    - label: LOGML Summer School · July 2026
+      details: London, UK. Project on information propagation in GNNs, mentored by
+        Giuseppe Alessio D’Inverno.
+    - label: Applied Deep Learning in Bioinformatics · August 2025
+      details: Summer school in Copenhagen, Denmark.
+    - label: ESILV · April–June 2019
+      details: Project-based exchange in Data Science, Paris, France.
+    Teaching:
+    - label: Lecturer · 2025–present
+      details: Principles of Bioscience Omics, University of Helsinki. Machine learning
+        methods for biomedical data.
+    - label: Teaching Assistant · 2023–2024
+      details: Machine Learning, Università della Svizzera italiana (USI).
+    Supervision:
+    - label: Xichun Zhang · 2025–present
+      details: Master’s thesis co-supervisor, University of Helsinki. Heterophily
+        in graph-level tasks and Graph Transformer training dynamics.
+    - label: Christian Squadrito · 2023–2024
+      details: Master’s thesis co-supervisor, USI. Machine learning for EMG-based
+        silent speech interfaces.
+    Academic Service:
+    - label: Conference reviewing
+      details: NeurIPS 2025, ICML 2026, and NeurIPS 2026. Gold Reviewer, ICML 2026.
+    - label: Journal reviewing
+      details: Reviewer for biomedical journals.
+    - label: Local organising
+      details: ISBRA 2025, Helsinki; ICANN, Lugano, 2023–2024.
+    - label: Student representation
+      details: International Student Representative, Uppsala University, 2022.
+    Awards:
+    - title: Excellent Thesis Award
+      awarder: Tianjin University
+      date: '2020'
+    - title: Outstanding Student Award
+      awarder: Tianjin University
+      date: 2018–2019
+    Languages:
+    - name: Mandarin Chinese
+      summary: Native
+    - name: English
+      summary: Full professional proficiency
+    - name: Italian
+      summary: Basic proficiency
+    - name: Finnish
+      summary: Beginner
+    Publications and Presentations:
+    - bullet: See the [publications page](/publications/) for papers and the [talks
+        & posters page](/talks/) for presentations. The downloadable PDF includes
+        the full publication list.

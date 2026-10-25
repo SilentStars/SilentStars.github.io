@@ -1,0 +1,36 @@
+:root {
+  --global-theme-color: #176a72;
+  --global-hover-color: #12575e;
+}
+html[data-theme="dark"] {
+  --global-theme-color: #79c9cc;
+  --global-hover-color: #a5e0e2;
+}
+.post-header { margin-bottom: 1.8rem; }
+.post-title { letter-spacing: -0.025em; }
+.post article { line-height: 1.7; }
+.post h2 { margin-top: 2.2rem; margin-bottom: 1rem; }
+.profile { margin-bottom: 1.2rem; }
+.profile img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 54% 45%;
+  border-radius: 0.45rem;
+  box-shadow: none;
+}
+.recent-activities { padding: 0; list-style: none; }
+.recent-activities li { display: flex; gap: 1.25rem; margin-bottom: 1.1rem; }
+.recent-activities .activity-date { flex: 0 0 5rem; padding-top: 0.1rem; color: var(--global-text-color-light); font-size: 0.88rem; }
+.recent-activities p { margin: 0.15rem 0 0; font-size: 0.95rem; }
+.activity-entry { padding: 1.15rem 0 1.4rem; border-bottom: 1px solid var(--global-divider-color); }
+.activity-entry h3 { margin: 0.25rem 0 0.35rem; font-size: 1.35rem; }
+.activity-eyebrow, .activity-dates { font-size: 0.88rem; color: var(--global-text-color-light); margin-bottom: 0.45rem; }
+.activity-eyebrow { text-transform: uppercase; letter-spacing: 0.05em; }
+.activity-links { font-size: 0.9rem; margin-bottom: 0; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 4px; }
+@media (max-width: 575.98px) {
+  .profile.float-right { float: none; margin: 0 auto 1.8rem; max-width: 340px; }
+  .profile img { aspect-ratio: 1; }
+  .recent-activities li { gap: 0.75rem; }
+  .recent-activities .activity-date { flex-basis: 4.5rem; }
+}
