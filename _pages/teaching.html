@@ -7,6 +7,10 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% if site.teaching.size == 0 %}
+<p>Teaching information will be added here.</p>
+{% else %}
+  {% for post in site.teaching reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
