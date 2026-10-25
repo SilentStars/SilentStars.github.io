@@ -14,9 +14,14 @@ I am **Qinhan Hou** at the [University of Helsinki](https://www.helsinki.fi/en).
 
 Research interests and current projects will be added here.
 
-## Publications
+## Selected publications
 
-You can find my publications on [Google Scholar](https://scholar.google.com/citations?user=Mp2BNQsAAAAJ&hl=en).
+{% assign selected_publications = site.publications | where: "selected", true | sort: "date" | reverse %}
+{% for publication in selected_publications %}
+{% include publication-entry.html publication=publication %}
+{% endfor %}
+
+[All publications]({{ "/publications/" | relative_url }}) &middot; [Google Scholar](https://scholar.google.com/citations?user=Mp2BNQsAAAAJ&hl=en)
 
 ## More
 

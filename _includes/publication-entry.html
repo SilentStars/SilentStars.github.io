@@ -1,0 +1,31 @@
+{% assign publication = include.publication %}
+<article class="publication-entry" aria-label="{{ publication.title | escape }}">
+  {% unless include.detail_page %}
+  <h3 class="archive__item-title publication-entry__title">
+    <a href="{{ publication.url | relative_url }}">{{ publication.title | escape }}</a>
+  </h3>
+  {% endunless %}
+  {% if publication.authors %}
+  <p class="publication-entry__authors">{% for author in publication.authors %}{% if author == site.name %}<strong>{{ author | escape }}</strong>{% else %}{{ author | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+  {% endif %}
+  {% unless include.detail_page %}
+  <p class="publication-entry__venue">
+    <strong>{{ publication.venue | escape }} {{ publication.date | date: "%Y" }}</strong>{% if publication.track %} &middot; {{ publication.track | escape }}{% endif %}{% if publication.status_label and publication.status_label != empty %} &middot; {{ publication.status_label | escape }}{% endif %}
+  </p>
+  {% if publication.venue_detail %}<p class="publication-entry__venue-detail">{{ publication.venue_detail | escape }}</p>{% endif %}
+  {% endunless %}
+  {% if publication.excerpt %}<p class="publication-entry__summary">{{ publication.excerpt | strip_html | escape }}</p>{% endif %}
+  <ul class="publication-entry__links" aria-label="Resources for {{ publication.title | escape }}">
+    {% if publication.arxivurl %}<li><a href="{{ publication.arxivurl | escape }}">{{ publication.arxiv_label | default: "arXiv" | escape }}</a></li>{% endif %}
+    {% unless include.detail_page %}
+    {% if publication.paperurl %}<li><a href="{{ publication.paperurl | escape }}">{{ publication.paper_label | default: "PDF" | escape }}</a></li>{% endif %}
+    {% endunless %}
+    {% if publication.venueurl %}<li><a href="{{ publication.venueurl | escape }}">Conference</a></li>{% endif %}
+    {% if publication.reviewurl %}<li><a href="{{ publication.reviewurl | escape }}">OpenReview</a></li>{% endif %}
+    {% if publication.codeurl %}<li><a href="{{ publication.codeurl | escape }}">Code</a></li>{% endif %}
+    {% unless include.detail_page %}
+    {% if publication.bibtexurl %}<li><a href="{{ publication.bibtexurl | relative_url }}">BibTeX</a></li>{% endif %}
+    <li><a href="{{ publication.url | relative_url }}">Details</a></li>
+    {% endunless %}
+  </ul>
+</article>
