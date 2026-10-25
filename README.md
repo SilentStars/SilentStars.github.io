@@ -21,7 +21,7 @@
 | 头像 | `images/profile.svg`，或在 `_config.yml` 中设置其他图片 |
 | PDF、BibTeX 等下载文件 | `files/` |
 
-目前论文展示包含 NeurIPS 2026 主会论文和 NeurIPS 2025 NPGML Workshop 论文。主会条目采用作者确认的新标题，arXiv 链接注明为早期版本。研究方向和 CV 详情待补充。
+目前论文展示包含 NeurIPS 2026 主会论文和 NeurIPS 2025 NPGML Workshop 论文。主会条目采用作者确认的新标题，arXiv 链接注明为早期版本。首页简介与研究方向依据论文和活动整理，CV 详情待补充。
 
 ## 新增一篇论文
 

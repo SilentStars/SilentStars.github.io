@@ -1,18 +1,25 @@
 ---
 permalink: /
 title: "About"
-excerpt: "Academic homepage of Qinhan Hou at the University of Helsinki."
+excerpt: "Qinhan Hou at the University of Helsinki, exploring graph learning, information flow and molecular data."
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-I am **Qinhan Hou** at the [University of Helsinki](https://www.helsinki.fi/en).
+I’m **Qinhan Hou**, and I work on graph machine learning at the [University of Helsinki](https://www.helsinki.fi/en). I study how information moves through graph models and how their structure and dynamics shape what they can learn.
+
+I move between theory and experiments, working with GNNs, Graph ODEs and Graph Transformers. Recent summer schools and collaborative projects have given me opportunities to connect these interests with geometry and bioinformatics.
 
 ## Research
 
-Research interests and current projects will be added here.
+A few themes run through my current work:
+
+- **Graph dynamics and information flow.** I study how node representations evolve during propagation, including [feature collapse in Graph ODEs]({{ "/publication/hysteretic-graph-odes/" | relative_url }}) and how adaptive topology can help preserve useful differences.
+- **Graph structure and task locality.** I explore how [Graph Transformers](https://arxiv.org/abs/2604.22413) can match their communication to where a task’s useful information lives, from nearby neighbors to more distant parts of a graph.
+- **Heterophily and graph-level learning.** My work looks at how [local motifs and mixed-frequency dynamics]({{ "/publication/heterophily-graph-level-tasks/" | relative_url }}) affect graph prediction, and how models can combine different kinds of structural signals.
+- **Molecular and biological applications.** I’m interested in graph methods for molecular property prediction, and in the broader connections between deep learning and bioinformatics.
 
 ## Selected publications
 
