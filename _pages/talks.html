@@ -1,16 +1,22 @@
 ---
 layout: archive
-title: "Talks"
+title: "Talks and posters"
 permalink: /talks/
 author_profile: true
 ---
 
-{% include base_path %}
+<p>Posters and presentations are a chance to put ideas in front of other researchers. Here’s what I’ve been sharing.</p>
 
-{% if site.talks.size == 0 %}
-<p>Talks and presentations will be added here.</p>
-{% else %}
+{% assign posters = site.data.activities | where: "kind", "poster" | sort: "date" | reverse %}
+{% for activity in posters %}
+  {% include activity-entry.html activity=activity %}
+{% endfor %}
+
+{% if site.talks.size > 0 %}
+  {% include base_path %}
   {% for post in site.talks reversed %}
     {% include archive-single-talk.html %}
   {% endfor %}
+{% elsif posters.size == 0 %}
+  <p>New talks and presentations will appear here.</p>
 {% endif %}

@@ -15,7 +15,8 @@
 | 导航栏目 | `_data/navigation.yml` |
 | CV | `_pages/cv.md` |
 | 每篇论文的标题、作者、会议和链接 | `_publications/` 中对应的 Markdown 文件 |
-| 学术报告 | `_talks/` |
+| 暑校、合作项目、海报等学术活动 | `_data/activities.yml` |
+| 其他学术报告 | `_talks/` |
 | 教学经历 | `_teaching/` |
 | 头像 | `images/profile.svg`，或在 `_config.yml` 中设置其他图片 |
 | PDF、BibTeX 等下载文件 | `files/` |
@@ -51,6 +52,17 @@ bibtexurl: "/files/对应的引用文件.bib"
 - 主会论文的早期 arXiv 版本可用 `arxiv_label: "arXiv (earlier version)"`。
 - 详情页正文可参考已有文件，使用 `publication-entry.html` 展示作者和原文入口，再补充工作介绍。
 - 论文介绍组件为 `_includes/publication-entry.html`，样式为 `assets/css/publications.css`。首页和 Publications 页共用同一份论文资料。
+
+## 新增或修改学术活动
+
+三个活动的资料统一保存在 `_data/activities.yml`，首页、Activities 和海报展示页面会据此更新。文字以个人经历的口吻书写，时间、地点和项目标题保留官方信息。
+
+新增活动时复制一条已有记录，修改 `id`、`title`、`date`、`end_date`、`location`、`website`、`description` 和首页简短介绍 `highlight`。
+
+- 暑校使用 `kind: summer_school`、`kind_label: "Summer school"` 和 `role: "Participant"`。
+- 海报使用 `kind: poster`、`kind_label: "Poster presentation"` 和 `role: "Poster presenter"`，会自动出现在 Talks & Posters。
+- 项目可补充 `project_title`、`project_url`、`mentor`；海报可补充 `presentation_title`、`presentation_date`、`authors`、`abstract_url`。
+- `date` 和 `end_date` 使用 `YYYY-MM-DD` 格式。页面按活动时间倒序排列，首页显示最近三项。
 
 ## 发布与检查
 

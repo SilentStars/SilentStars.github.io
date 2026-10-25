@@ -1,0 +1,30 @@
+{% assign activity = include.activity %}
+<article class="activity-entry" id="{{ activity.id | escape }}" aria-label="{{ activity.title | escape }}">
+  <h3 class="archive__item-title activity-entry__title"><a href="{{ activity.website | escape }}">{{ activity.title | escape }}</a></h3>
+  <p class="activity-entry__meta"><strong>{{ activity.kind_label | escape }}</strong> &middot; {{ activity.location | escape }}</p>
+  <p class="activity-entry__meta">
+    {% assign start_month = activity.date | date: "%Y-%m" %}
+    {% assign end_month = activity.end_date | date: "%Y-%m" %}
+    {% if activity.end_date and activity.end_date != activity.date %}
+      {% if start_month == end_month %}
+        <time datetime="{{ activity.date | escape }}">{{ activity.date | date: "%-d" }}</time>&ndash;<time datetime="{{ activity.end_date | escape }}">{{ activity.end_date | date: "%-d %B %Y" }}</time>
+      {% else %}
+        <time datetime="{{ activity.date | escape }}">{{ activity.date | date: "%-d %B %Y" }}</time> &ndash; <time datetime="{{ activity.end_date | escape }}">{{ activity.end_date | date: "%-d %B %Y" }}</time>
+      {% endif %}
+    {% else %}
+      <time datetime="{{ activity.date | escape }}">{{ activity.date | date: "%-d %B %Y" }}</time>
+    {% endif %}
+  </p>
+  <p>{{ activity.description | escape }}</p>
+  {% if activity.project_title %}
+    <p><strong>Project:</strong> <a href="{{ activity.project_url | escape }}">{{ activity.project_title | escape }}</a><br><strong>Mentor:</strong> {{ activity.mentor | escape }}</p>
+  {% endif %}
+  {% if activity.presentation_title %}
+    <p><strong>Poster:</strong> {{ activity.presentation_title | escape }}</p>
+    {% if activity.authors %}<p class="activity-entry__meta">{% for author in activity.authors %}{% if author == site.name %}<strong>{{ author | escape }}</strong>{% else %}{{ author | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>{% endif %}
+    {% if activity.presentation_date %}<p class="activity-entry__meta">Poster session: {{ activity.presentation_date | date: "%-d %B %Y" }}</p>{% endif %}
+  {% endif %}
+  <p class="activity-entry__links">
+    <a href="{{ activity.website | escape }}">Event website</a>{% if activity.programme_url %} &middot; <a href="{{ activity.programme_url | escape }}">Programme</a>{% endif %}{% if activity.abstract_url %} &middot; <a href="{{ activity.abstract_url | escape }}">Extended abstract</a>{% endif %}
+  </p>
+</article>
