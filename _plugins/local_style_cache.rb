@@ -13,5 +13,9 @@ module QinhanLocalStyleCache
   end
 end
 
-digester = Jekyll::CacheBust::CacheDigester
-digester.prepend(QinhanLocalStyleCache) unless digester.ancestors.include?(QinhanLocalStyleCache)
+# Jekyll loads local plugin files before configured gems. Install after both
+# are loaded so the theme's fallback cannot shadow these local dependencies.
+Jekyll::Hooks.register :site, :after_init do |_site|
+  digester = Jekyll::CacheBust::CacheDigester
+  digester.prepend(QinhanLocalStyleCache) unless digester.ancestors.include?(QinhanLocalStyleCache)
+end
