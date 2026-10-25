@@ -63,6 +63,7 @@
 - Jekyll/al-folio v1 runtime in pinned gems; GitHub Actions builds and deploys to GitHub Pages.
 - Extend existing tokens; no additional design system or frontend build pipeline.
 - Keep identity assets local and publication links explicit. Avoid analytics and external post ingestion.
+- Include local Sass and dependency changes in the stylesheet version so returning visitors receive layout updates automatically.
 - Verify generated internal links and inspect the live homepage, publications, CV, mobile menu, and theme switch.
 
 ## Open questions

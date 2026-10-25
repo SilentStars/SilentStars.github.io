@@ -6,4 +6,6 @@ The MIT license in LICENSE covers the upstream starter. Runtime components retai
 
 The one runtime override is assets/css/main.scss. It retains the upstream imports and appends _sass/_personal.scss for portrait framing, accent colors, and the owner’s activity list. Run `bundle exec al-folio upgrade overrides audit` after runtime updates.
 
+The site-specific _plugins/local_style_cache.rb extends the pinned cache digester to include local Sass, the entry point, and Gemfile.lock. Core 1.0.15 only hashes its own Sass fallback, which leaves returning visitors with stale CSS after local edits. The regression check in test/style_cache_test.rb covers those update paths.
+
 Personal source data: the owner’s CV and confirmed publication/activity records. Paper metadata was cross-checked against arXiv, OpenReview, the EMBC programme, the University of Bremen publication record, and Uppsala’s DiVA repository.

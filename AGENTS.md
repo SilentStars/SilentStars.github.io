@@ -7,6 +7,7 @@ The owner selected al-folio. Do not submit personal-site changes to upstream the
 - Keep personal content in _pages/, _data/, _bibliography/, and assets/.
 - Theme runtime is provided by pinned al-folio gems in Gemfile and _config.yml. Keep their plugin lists aligned.
 - assets/css/main.scss intentionally overrides the gem entry point only to append _sass/_personal.scss. Track it with the al-folio override audit.
+- _plugins/local_style_cache.rb ensures edits to local Sass and theme dependencies invalidate browser CSS caches; keep its regression check passing.
 - Preserve the accepted NeurIPS 2026 title; arXiv:2604.24293 is its earlier version.
 - Workshop papers and extended abstracts must keep their venue and presentation labels.
 - The current Helsinki role is Doctoral Researcher, not an earned doctorate.
